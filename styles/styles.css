@@ -1,0 +1,120 @@
+/* Design Token */
+:root {
+  /* Colors */
+  /* Primary */
+  --green-100: #c4f17c;
+  --green-200: #a5e937;
+  --green-300: #7ebf15;
+  --green-400: #609110;
+  --green-500: #517a0d;
+  --green-600: #41630b;
+  --green-700: #324c08;
+  --green-800: #233506;
+  --green-900: #141e03;
+
+  /* gray */
+  --gray-50: #ededed;
+  --gray-100: #d9d9d9;
+  --gray-200: #a2a79d;
+  --gray-300: #71746c;
+  --gray-400: #676963;
+  --gray-500: #494b47;
+
+  /* Spacing */
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-18: 18px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+
+  /* Font Size */
+  --font-sm: 14px;
+  --font-md: 16px;
+  --font-lg: 18px;
+  --font-xl: 20px;
+  --font-2xl: 22px;
+  --font-3xl: 24px;
+  --font-4xl: 28px;
+  /* System Token */
+  /* Background */
+  --color-bg-primary: #fff;
+  --color-bg-inverse: #000;
+
+  /* Text */
+  --color-text-primary: #000;
+  --color-text-inverse: #fff;
+
+  /* error */
+  --error-100: #ff4141;
+
+  /* Responsive */
+  /* Layout Spacing */
+  --layout-padding-sm: 16px;
+  --layout-padding-md: 24px;
+
+  /* Container */
+  --container-max: 1280px;
+}
+
+/* css 리셋 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+}
+body {
+  overflow-x: hidden;
+  font-size: 16px;
+  color: #000;
+  background-color: #fff;
+}
+ul,
+li {
+  list-style: none;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+img {
+  border: 0;
+  vertical-align: middle;
+}
+
+/* Component Token */
+
+/* Layout */
+.loyout {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.outlet {
+  position: relative;
+  width: 100%;
+  max-width: var(--container-max);
+  flex: 1;
+  background-color: #d4d4d4;
+}
+
+@media screen and (min-width: 320px) {
+  .layout {
+    padding: 0 var(--layout-padding-sm);
+  }
+}
+@media screen and (min-width: 768px) {
+  .layout {
+    padding: 0 var(--layout-padding-md);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .layout {
+    padding: 0;
+  }
+}
