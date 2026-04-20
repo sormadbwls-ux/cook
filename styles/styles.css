@@ -1,120 +1,270 @@
-/* Design Token */
-:root {
-  /* Colors */
-  /* Primary */
-  --green-100: #c4f17c;
-  --green-200: #a5e937;
-  --green-300: #7ebf15;
-  --green-400: #609110;
-  --green-500: #517a0d;
-  --green-600: #41630b;
-  --green-700: #324c08;
-  --green-800: #233506;
-  --green-900: #141e03;
-
-  /* gray */
-  --gray-50: #ededed;
-  --gray-100: #d9d9d9;
-  --gray-200: #a2a79d;
-  --gray-300: #71746c;
-  --gray-400: #676963;
-  --gray-500: #494b47;
-
-  /* Spacing */
-  --spacing-4: 4px;
-  --spacing-8: 8px;
-  --spacing-12: 12px;
-  --spacing-16: 16px;
-  --spacing-18: 18px;
-  --spacing-20: 20px;
-  --spacing-24: 24px;
-
-  /* Font Size */
-  --font-sm: 14px;
-  --font-md: 16px;
-  --font-lg: 18px;
-  --font-xl: 20px;
-  --font-2xl: 22px;
-  --font-3xl: 24px;
-  --font-4xl: 28px;
-  /* System Token */
-  /* Background */
-  --color-bg-primary: #fff;
-  --color-bg-inverse: #000;
-
-  /* Text */
-  --color-text-primary: #000;
-  --color-text-inverse: #fff;
-
-  /* error */
-  --error-100: #ff4141;
-
-  /* Responsive */
-  /* Layout Spacing */
-  --layout-padding-sm: 16px;
-  --layout-padding-md: 24px;
-
-  /* Container */
-  --container-max: 1280px;
-}
-
-/* css 리셋 */
+/* 기본 초기화 */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-html {
-}
+
 body {
-  overflow-x: hidden;
+  font-family:
+    "Pretendard", sans-serif; /* 폰트가 없으면 기본 서체로 나옵니다 */
+}
+
+/* 1. 헤더 설정 */
+.main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 80px;
+  background-color: white;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.search-wrap {
+  display: flex;
+  align-items: center;
+  background-color: #f2f2f2;
+  border-radius: 25px;
+  padding: 10px 25px;
+  width: 500px;
+}
+
+.search-icon {
+  width: 18px;
+  opacity: 0.5;
+}
+
+.search-input {
+  border: none;
+  background: none;
+  outline: none;
+  width: 100%;
+  margin-left: 10px;
+  font-size: 14px;
+}
+
+.header-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.icon-btn {
+  width: 45px;
+  height: 45px;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.icon-img {
+  width: 24px;
+}
+
+/* 2. 메뉴 바 */
+.nav-menu {
+  display: flex;
+  justify-content: center;
+  gap: 60px;
+  padding: 20px 0;
+  border-top: 1px solid #f5f5f5;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
   font-size: 16px;
-  color: #000;
+}
+
+/* 3. 배너 구역 (스테이크 사진) */
+.main-banner {
+  width: 100%;
+  height: 400px;
+  background-color: #f0f0f0;
+  background-image: url("/assets/image/shopping_benner.png"); /* 사진 경로 확인 필수! */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* 메인 배너 구역 */
+.main-banner {
+  width: 100%;
+  height: 380px; /* 도안에 맞춰 높이 조절 */
+  position: relative;
+  background-color: #eee;
+  /* 이미지 경로가 맞는지 꼭 확인하세요! */
+  background-image: url("../assets/image/shopping_benner.png");
+  background-size: cover;
+  background-position: center;
+}
+
+/* 오른쪽 광고 박스 */
+.ad-list-box {
+  position: absolute;
+  right: 80px; /* 오른쪽에서 80px 띄움 */
+  top: 50%;
+  transform: translateY(-50%); /* 세로 중앙 정렬 */
+  background: white;
+  width: 200px;
+  border: 1px solid #ddd;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 광고 박스 안의 각 칸 */
+.ad-item {
+  padding: 13px;
+  text-align: center;
+  font-size: 13px;
+  color: #333;
+  border-bottom: 1px solid #eee;
+}
+
+.ad-item:last-child {
+  border-bottom: none;
+}
+
+/* 질문하셨던 연두색 테두리 포인트 */
+.ad-item.active-line {
+  border: 2px solid #a3e020;
+  position: relative;
+  z-index: 10;
+  margin: -1px 0; /* 테두리 겹침 방지 */
+}
+
+/* ////////////////////////여기까지가 스테이크 사진 광고문구 배너 부분////////////건들지말것 */
+
+/* --- 하단 레시피 구역 전용 (절대 안 꼬임) --- */
+.recipe-section {
+  padding: 80px 120px;
   background-color: #fff;
 }
-ul,
-li {
-  list-style: none;
-}
-a {
-  color: inherit;
-  text-decoration: none;
-}
-img {
-  border: 0;
-  vertical-align: middle;
+
+.recipe-flex-container {
+  display: flex !important; /* 가로 정렬 강제 */
+  gap: 100px;
+  align-items: flex-start;
 }
 
-/* Component Token */
-
-/* Layout */
-.loyout {
-  position: relative;
-  width: 100%;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-.outlet {
-  position: relative;
-  width: 100%;
-  max-width: var(--container-max);
+.recipe-column {
   flex: 1;
-  background-color: #d4d4d4;
+  width: 450px;
 }
 
-@media screen and (min-width: 320px) {
-  .layout {
-    padding: 0 var(--layout-padding-sm);
-  }
+.title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  gap: 20px;
 }
-@media screen and (min-width: 768px) {
-  .layout {
-    padding: 0 var(--layout-padding-md);
-  }
+
+.title-with-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 20px;
+  color: #2d4333;
 }
-@media screen and (min-width: 1024px) {
-  .layout {
-    padding: 0;
-  }
+
+.leaf-icon {
+  width: 22px;
+  height: auto;
 }
+.more-btn {
+  font-size: 13px;
+  color: #999;
+}
+
+/* 인기 레시피 레이아웃 */
+.food-card-layout {
+  display: flex;
+  gap: 20px;
+}
+.food-img-stack {
+  position: relative;
+  width: 220px;
+  height: 150px;
+}
+.food-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.badge {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  width: 45px;
+}
+
+.food-info h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+}
+.food-info .summary {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 15px;
+}
+.food-info .tag-list {
+  font-size: 12px;
+  color: #bbb;
+}
+
+/* 테라피 레시피 레이아웃 (가로 정렬) */
+.guide-text {
+  font-size: 13px;
+  color: #aaa;
+  margin-bottom: 20px;
+}
+.therapy-grid-box {
+  display: flex !important; /* 아이콘들 가로 정렬 강제 */
+  gap: 12px;
+}
+
+.t-unit {
+  text-align: center;
+  font-size: 13px;
+  font-weight: bold;
+  color: #2d4333;
+}
+
+.t-circle {
+  width: 85px;
+  height: 105px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+/* 아이콘 크기 고정 */
+.t-circle img {
+  width: 55px !important;
+  height: auto !important;
+}
+
+/* 배경색들 */
+.pink {
+  background: #fdf1f1;
+}
+.blue {
+  background: #e8f6f6;
+}
+.orange {
+  background: #fff5f1;
+}
+.green {
+  background: #f1f8f1;
+}
+
+/* ////////////////////////////////////테라피 레시피랑 인기 레시피 구간/////////////여기까지가!!!!!////////////////////////////////////// */

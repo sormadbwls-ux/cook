@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>요리조리</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="logo">
+        <img src="assets/image/main_logo_cook.png" alt="요리조리 로고" />
+      </div>
+      <div class="search-wrap">
+        <img
+          src="assets/icons/zoom_icon.png"
+          alt="돋보기"
+          class="search-icon"
+        />
+        <input
+          type="text"
+          class="search-input"
+          placeholder="오늘의 레시피를 검색해보세요"
+        />
+      </div>
+      <div class="header-icons">
+        <div class="icon-btn">
+          <img
+            src="assets/icons/mypage_icon.png"
+            alt="마이페이지"
+            class="icon-img"
+          />
+        </div>
+        <div class="icon-btn">
+          <img
+            src="assets/icons/shopping_icon.png"
+            alt="장바구니"
+            class="icon-img"
+          />
+        </div>
+      </div>
+    </header>
+
+    <nav class="nav-menu">
+      <a href="#">채소/과일</a>
+      <a href="#">고기/수산</a>
+      <a href="#">양념/소스</a>
+      <a href="#">유제품/계란</a>
+    </nav>
+
+    <section class="main-banner">
+      <div class="ad-list-box">
+        <div class="ad-item">광고배너 문구</div>
+        <div class="ad-item active-line">광고배너 문구</div>
+        <div class="ad-item">광고배너 문구</div>
+        <div class="ad-item">광고배너 문구</div>
+        <div class="ad-item">광고배너 문구</div>
+      </div>
+    </section>
+    <!-- 위에는 건들지 말것/////////////////////////////////////////////////////////////// -->
+
+    <!-- 여기부터 인기레시피 테라피 레시피 -->
+    <section class="recipe-section">
+      <div class="recipe-flex-container">
+        <div class="recipe-column">
+          <div class="title-bar">
+            <h2 class="title-with-icon">
+              <img
+                src="assets/icons/home_icon_leaft_01.png"
+                class="leaf-icon"
+              />
+              오늘의 인기 레시피
+            </h2>
+            <span class="more-btn">더 보기</span>
+          </div>
+
+          <div class="food-card-layout">
+            <div class="food-img-stack">
+              <img
+                src="assets/image/hom_image_hotcake_01.png"
+                class="food-img"
+              />
+              <img src="assets/icons/no1_cion2.png" class="badge" />
+            </div>
+            <div class="food-info">
+              <h3>바나나 바질 핫케이크</h3>
+              <p class="summary">2번째줄까지 고려</p>
+              <p class="tag-list">#스트레스 풀림 #디저트 #아이들 간식 대용</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="recipe-column">
+          <div class="title-bar">
+            <h2 class="title-with-icon">
+              <img
+                src="assets/icons/home_icon_leaft_01.png"
+                class="leaf-icon"
+              />
+              테라피 레시피
+            </h2>
+            <span class="more-btn">더 보기</span>
+          </div>
+          <p class="guide-text">지금 내 상태에 맞는 레시피를 찾아줄께요</p>
+
+          <div class="therapy-grid-box">
+            <div class="t-unit">
+              <div class="t-circle pink">
+                <img src="assets/icons/menu-icon_06.png" />
+              </div>
+              저칼로리
+            </div>
+            <div class="t-unit">
+              <div class="t-circle blue">
+                <img src="assets/icons/menu-icon_05.png" />
+              </div>
+              당뇨
+            </div>
+            <div class="t-unit">
+              <div class="t-circle orange">
+                <img src="assets/icons/menu-icon_04.png" />
+              </div>
+              혈압
+            </div>
+            <div class="t-unit">
+              <div class="t-circle green">
+                <img src="assets/icons/menu-icon_03.png" />
+              </div>
+              피부/미용
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- //////////////////////////////////여기까지가 테라피 레시피 인기 레시피 구간///////////////////////////////////////////////// -->
+  </body>
+</html>
