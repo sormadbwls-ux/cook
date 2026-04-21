@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>요리조리 - 쇼핑몰</title>
+    <style>
+      /* 기본 스타일 (기존 유지) */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "LotteMartDream", sans-serif;
+        background-color: #fff;
+        color: #333;
+      }
+
+      /* 헤더 스타일 */
+      .main-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 80px;
+        background: #fff;
+        border-bottom: 1px solid #f5f5f5;
+      }
+      .logo img {
+        height: 50px;
+        cursor: pointer;
+      }
+
+      .search-wrap {
+        display: flex;
+        align-items: center;
+        background-color: #f2f2f2;
+        border-radius: 25px;
+        padding: 10px 25px;
+        width: 500px;
+      }
+      .search-icon {
+        width: 18px;
+        opacity: 0.5;
+        margin-right: 10px;
+      }
+      .search-input {
+        border: none;
+        background: none;
+        outline: none;
+        width: 100%;
+        font-size: 14px;
+      }
+
+      .header-icons {
+        display: flex;
+        gap: 15px;
+      }
+      .icon-btn {
+        width: 45px;
+        height: 45px;
+        border: 1px solid #eee;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+      .icon-img {
+        width: 24px;
+      }
+
+      /* 네비게이션 */
+      .nav-menu {
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        padding: 20px 0;
+        font-size: 18px;
+        font-weight: bold;
+      }
+      .nav-menu a {
+        text-decoration: none;
+        color: #333;
+      }
+
+      /* 배너 영역 */
+      .main-banner {
+        width: 100%;
+        height: 380px;
+        background-color: #eee;
+        background-image: url("assets/image/shopping_benner.png"); /* 메인 홈 경로 규칙 적용 */
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+      .ad-list-box {
+        position: absolute;
+        right: 80px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: white;
+        width: 200px;
+        border: 1px solid #ddd;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
+      .ad-item {
+        padding: 13px;
+        text-align: center;
+        font-size: 13px;
+        border-bottom: 1px solid #eee;
+      }
+      .ad-item.active-line {
+        border: 2px solid #addb47;
+        position: relative;
+        z-index: 10;
+        margin: -1px 0;
+      }
+
+      /* 상품 섹션 */
+      .product-section {
+        padding: 60px 120px;
+      }
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 30px;
+      }
+      .section-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: 20px;
+        color: #2d4333;
+        font-weight: bold;
+      }
+      .leaf-icon {
+        width: 22px;
+      } /* 메인 홈 나뭇잎 아이콘 활용 */
+      .more-btn {
+        font-size: 14px;
+        color: #999;
+        text-decoration: none;
+      }
+
+      .product-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+      }
+      .product-card {
+        text-align: left;
+        cursor: pointer;
+      }
+      .product-img-box {
+        width: 100%;
+        aspect-ratio: 1/1;
+        background-color: #f9f9f9;
+        border-radius: 15px;
+        margin-bottom: 15px;
+        position: relative;
+        overflow: hidden;
+      }
+      .product-img-box img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+      .frozen-badge {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: #00a0e9;
+        color: white;
+        font-size: 10px;
+        padding: 3px 6px;
+        border-radius: 4px;
+      }
+      .p-brand {
+        font-size: 13px;
+        color: #888;
+        margin-bottom: 5px;
+      }
+      .p-name {
+        font-size: 14px;
+        margin-bottom: 8px;
+        line-height: 1.4;
+        height: 40px;
+        overflow: hidden;
+      }
+      .p-price {
+        font-size: 17px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="logo" onclick="location.href = 'index.html'">
+        <img src="assets/image/main_logo_cook.png" alt="요리조리 로고" />
+      </div>
+      <div class="search-wrap">
+        <img
+          src="assets/icons/zoom_icon.png"
+          alt="돋보기"
+          class="search-icon"
+        />
+        <input
+          type="text"
+          class="search-input"
+          placeholder="오늘의 레시피 / 필요한 재료를 검색해보세요"
+        />
+      </div>
+      <div class="header-icons">
+        <div class="icon-btn">
+          <img
+            src="assets/icons/mypage_icon.png"
+            alt="마이페이지"
+            class="icon-img"
+          />
+        </div>
+        <div class="icon-btn">
+          <img
+            src="assets/icons/shopping_icon.png"
+            alt="장바구니"
+            class="icon-img"
+          />
+        </div>
+      </div>
+    </header>
+
+    <nav class="nav-menu">
+      <a href="#">채소/과일</a>
+      <a href="#">고기/수산</a>
+      <a href="#">양념/소스</a>
+      <a href="#">유제품/계란</a>
+    </nav>
+
+    <section class="main-banner">
+      <div class="ad-list-box">
+        <div class="ad-item">광고배너 문구</div>
+        <div class="ad-item active-line">광고배너 문구</div>
+        <div class="ad-item">광고배너 문구</div>
+        <div class="ad-item">광고배너 문구</div>
+        <div class="ad-item">광고배너 문구</div>
+      </div>
+    </section>
+
+    <section class="product-section">
+      <div class="section-header">
+        <div class="section-title">
+          <img src="assets/icons/home_icon_leaft_01.png" class="leaf-icon" />
+          오늘의 인기 레시피 재료
+        </div>
+        <a href="#" class="more-btn">더 보기 ＞</a>
+      </div>
+
+      <div class="product-grid">
+        <div class="product-card">
+          <div class="product-img-box">
+            <img src="assets/image/item_hotcake.png" alt="상품" />
+          </div>
+          <p class="p-brand">토리식품</p>
+          <p class="p-name">핫케이크 가루, 1개, 600g</p>
+          <p class="p-price">9,000원</p>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-box">
+            <img src="assets/image/itme_milk.png" alt="상품" />
+          </div>
+          <p class="p-brand">동원목장</p>
+          <p class="p-name">유기농 목초 우유 1000ml 3병 1</p>
+          <p class="p-price">17,000원</p>
+        </div>
+
+        <div class="product-card">
+          <div class="product-img-box">
+            <img src="assets/image/item_butter.png" alt="상품" />
+            <span class="frozen-badge">냉동</span>
+          </div>
+          <p class="p-brand">앵커</p>
+          <p class="p-name">버터(냉동) 454g 1개</p>
+          <p class="p-price">8,390원</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

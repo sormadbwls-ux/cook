@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>요리조리 - 냉장고 찾기</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: "LotteMartDream", "Apple SD Gothic Neo", sans-serif;
+        background-color: #ffffff;
+      }
+
+      /* 상단 뒤로가기 및 제목 */
+      .header-content {
+        padding: 40px 25px 10px 25px;
+      }
+
+      .back-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        background-color: #addb47;
+        border-radius: 50%;
+        text-decoration: none;
+        margin-bottom: 20px;
+      }
+      .back-btn img {
+        width: 24px;
+        height: auto;
+      }
+
+      .upload-title {
+        font-size: 22px;
+        font-weight: bold;
+        color: #333;
+        margin: 0;
+      }
+
+      /* 중앙 검정 바 영역 */
+      .full-black-bar {
+        width: 100%;
+        background-color: #444444;
+        margin-top: 35px;
+        padding: 100px 0;
+        text-align: center;
+        color: #ffffff;
+      }
+
+      .upload-icon {
+        width: 100px;
+        margin-bottom: 20px;
+      }
+
+      .main-text {
+        font-size: 20px;
+        font-weight: 500;
+        margin: 0 0 10px 0;
+      }
+
+      .sub-text {
+        font-size: 15px;
+        color: #cccccc;
+      }
+
+      /* 하단 버튼 영역: 가로 길이를 시원하게 고정 */
+      .button-container {
+        display: flex;
+        justify-content: center;
+        gap: 30px; /* 버튼 사이 간격 */
+        padding: 60px 20px;
+      }
+
+      .action-btn {
+        flex: none; /* 크기 자동 조절 방지 */
+        width: 280px; /* 가로 길이 고정 */
+        height: 70px; /* 세로 높이 고정 */
+        border: none;
+        border-radius: 50px; /* 완전한 타원형 */
+        font-size: 20px; /* 글씨 크기 키움 */
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        white-space: nowrap; /* 글자 줄바꿈 방지 */
+        text-decoration: none;
+        color: #333;
+      }
+
+      /* 스마트 렌즈 (연두색) */
+      .action-btn.green {
+        background-color: #addb47;
+      }
+
+      /* 수동 설정 (회색) */
+      .action-btn.gray {
+        background-color: #e6e6e6;
+      }
+
+      /* 하단 안내 문구 */
+      .info-section {
+        padding: 0 25px 50px 25px;
+        text-align: center;
+      }
+
+      .info-text {
+        font-size: 14px;
+        color: #888;
+        line-height: 1.6;
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header-content">
+      <a href="index.html" class="back-btn">
+        <img src="assets/icons/back icon.png" alt="뒤로가기" />
+      </a>
+      <h1 class="upload-title">지금 내 냉장고에 맞는 레시피를 찾아볼까요?</h1>
+    </div>
+
+    <div class="full-black-bar">
+      <img src="assets/icons/view_icon.png" class="upload-icon" alt="아이콘" />
+      <p class="main-text">이미지를 끌어당겨 넣어주세요</p>
+      <p class="sub-text">냉장고 안이 잘 보이도록 촬영해주세요!</p>
+    </div>
+
+    <div class="button-container">
+      <button class="action-btn green" onclick="alert('스마트 렌즈 준비 중!')">
+        스마트 렌즈
+      </button>
+
+      <button
+        class="action-btn gray"
+        onclick="location.href = 'manual_setup.html'"
+      >
+        수동 설정
+      </button>
+    </div>
+
+    <div class="info-section">
+      <p class="info-text">
+        * 사진을 찍으면 AI가 식재료를 자동으로 인식합니다.<br />
+        * 인식되지 않는 재료는 수동으로 추가할 수 있어요.
+      </p>
+    </div>
+  </body>
+</html>

@@ -1,8 +1,27 @@
-/* 기본 초기화 */
+/* 모든 태그에 롯데마트 드림체를 적용하겠다는 뜻 */
+* {
+  font-family: "LotteMartDream", "Apple SD Gothic Neo", sans-serif;
+}
+@font-face {
+  font-family: "LotteMartDream";
+  src: url("https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/LotteMartDream.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "LotteMartDream", sans-serif;
+} /* 기본 초기화 */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+* {
+  font-family: "LotteMartDream", "Apple SD Gothic Neo", sans-serif;
 }
 
 body {
@@ -144,6 +163,7 @@ body {
 .recipe-section {
   padding: 80px 120px;
   background-color: #fff;
+  padding-bottom: 20px;
 }
 
 .recipe-flex-container {
@@ -161,7 +181,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   gap: 20px;
 }
 
@@ -171,6 +191,7 @@ body {
   gap: 8px;
   font-size: 20px;
   color: #2d4333;
+  margin-bottom: 0%;
 }
 
 .leaf-icon {
@@ -224,6 +245,7 @@ body {
   font-size: 13px;
   color: #aaa;
   margin-bottom: 20px;
+  margin-top: 0px;
 }
 .therapy-grid-box {
   display: flex !important; /* 아이콘들 가로 정렬 강제 */
@@ -337,3 +359,157 @@ body {
 .green {
   background: #f1f8f1;
 }
+
+/* 여기부어 하단의 내 냉장고 레시피 css */
+/* 냉장고 배너 섹션 스타일링 */
+.fridge-banner-section {
+  width: 100%;
+  height: 250px; /* 시안에 맞춰 높이 조절 */
+  background-image: url("../assets/image/main_bg_cook_01.png"); /* 배경 이미지 경로 확인 */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  margin-top: 50px;
+}
+
+.fridge-banner-bg {
+  text-align: center;
+  position: relative;
+}
+
+.fridge-guide-text {
+  color: white;
+  font-size: 18px;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+}
+
+.fridge-button {
+  background-color: #addb47; /* 시안의 연두색 */
+  padding: 15px 50px;
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: bold;
+  font-size: 22px;
+  color: #333;
+  cursor: pointer;
+  position: relative;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* 요리사 캐릭터 배치 */
+.cook-character {
+  position: absolute;
+  right: -30px;
+  top: -20px;
+  width: 80px; /* 이미지 크기에 맞춰 조절 */
+}
+
+/* upload 냉장고 이미지 끌어오기 관련 css///////////////////////////////// */
+/* 뒤로가기 버튼을 연두색 동그라미로 만듭니다 */
+.upload-page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 40px 30px;
+  background-color: #fff;
+}
+.back-btn {
+  display: flex; /* 안의 화살표를 가운데로 보냅니다 */
+  align-items: center;
+  justify-content: center;
+  width: 45px; /* 동그라미 크기 */
+  height: 45px;
+  background-color: #addb47; /* 시안에 있는 연두색 */
+  border-radius: 50%; /* 모양을 동그랗게 깎습니다 */
+  text-decoration: none; /* 밑줄을 없앱니다 */
+  margin-bottom: 25px; /* 버튼 아래 글자와의 간격 */
+}
+
+/* 동그라미 안에 들어가는 화살표 이미지 크기입니다 */
+.back-btn img {
+  width: 24px;
+  height: auto;
+}
+
+/* 제목 글자 스타일입니다 */
+.upload-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* 이미지 뒷쪽 어두운 박수 */
+.upload-box {
+  width: 100%;
+  background-color: #444;
+  padding: 60px 0;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.upload-icon {
+  width: 60px;
+  margin-bottom: 20px;
+}
+
+.main-text {
+  color: #ffffff; /* 글자색 흰색 */
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.sub-text {
+  color: #aaaaaa; /* 작은 글자는 살짝 흐리게 */
+  font-size: 14px;
+}
+
+/* 버튼 컨테이너: 버튼들이 가로로 넓게 퍼지도록 */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 60px; /* 버튼 사이 간격 */
+  padding: 60px 20px;
+  width: 100%; /* 전체 너비 사용 */
+  box-sizing: border-box;
+}
+
+.action-btn {
+  /* 찌그러지지 않게 너비 고정 */
+  width: 700px; /* 가로 길이를 충분히 줍니다 */
+  height: 70px; /* 높이 고정 */
+
+  border: none;
+  border-radius: 50px; /* 양 끝을 완전 둥글게 */
+  font-size: 20px; /* 글자 크기 시원하게 */
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap; /* 글자가 밑으로 떨어지지 않게 한 줄 고정 */
+}
+
+/* 스마트 렌즈 (연두색) */
+.action-btn.green {
+  background-color: #addb47;
+  color: #333;
+}
+
+/* 수동 설정 (회색) */
+.action-btn.gray {
+  background-color: #e6e6e6;
+  color: #333;
+}
+
+/* 여기까지가 내 냉장고 레시피 css */
