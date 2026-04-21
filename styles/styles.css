@@ -268,3 +268,72 @@ body {
 }
 
 /* ////////////////////////////////////테라피 레시피랑 인기 레시피 구간/////////////여기까지가!!!!!////////////////////////////////////// */
+
+/* --- 테라피 레시피 최종 디테일 (맨 밑에 추가) --- */
+
+/* 1. 인기 레시피 끝단에 맞추기 */
+.therapy-section-custom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end; /* 이 명령으로 오른쪽 정렬 */
+}
+
+/* 제목 줄과 가이드 텍스트를 오른쪽 끝에 맞춤 */
+.therapy-section-custom .title-bar,
+.therapy-section-custom .guide-text {
+  width: 100%;
+  text-align: right;
+}
+
+.therapy-section-custom .title-bar {
+  justify-content: space-between; /* 제목과 더보기는 그대로 유지 */
+}
+
+/* 2. 버튼 크기 키우기 및 글자 넣기 */
+.therapy-grid-box-custom {
+  display: flex !important;
+  gap: 15px; /* 버튼 사이 간격 */
+  width: 100%; /* 부모 너비에 맞춤 */
+}
+
+.t-circle {
+  /* 기존 크기보다 키움 */
+  width: 110px;
+  height: 140px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column; /* 아이콘과 글자를 세로로 */
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0; /* 아래로 떨어지지 않게 */
+  padding: 15px; /* 안쪽 여백 */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* 세련된 그림자 */
+}
+
+/* 버튼 안의 아이콘 크기 */
+.t-circle img {
+  width: 65px !important; /* 55px에서 키움 */
+  height: auto !important;
+  margin-bottom: 12px; /* 글자와의 간격 */
+}
+
+/* 버튼 안의 글자 스타일 */
+.t-circle span {
+  font-size: 15px; /* 글자 크기 키움 */
+  font-weight: 600; /* 조금 더 두껍게 */
+  color: #444;
+}
+
+/* 배경색 정의 (기존 코드가 안 먹을 수 있으니 다시 정의) */
+.pink {
+  background: #fdf1f1;
+}
+.blue {
+  background: #e8f6f6;
+}
+.orange {
+  background: #fff5f1;
+}
+.green {
+  background: #f1f8f1;
+}
