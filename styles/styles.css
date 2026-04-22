@@ -249,7 +249,7 @@ body {
 }
 .therapy-grid-box {
   display: flex !important; /* 아이콘들 가로 정렬 강제 */
-  gap: 12px;
+  gap: 25px;
 }
 
 .t-unit {
@@ -521,3 +521,93 @@ body {
 }
 
 /* 여기까지가 내 냉장고 레시피 css */
+
+/* /////////////////////쇼핑몰 관련 css////////////////////////////////////// */
+
+/* 섹션 공통 레이아웃 */
+.special-discount {
+  width: 100%;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: bold;
+}
+
+.view-more {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+/* 그리드 시스템 */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* 5단 배열 */
+  gap: 15px;
+}
+
+/* 개별 카드 디자인 */
+.product-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 12px;
+}
+
+.image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 텍스트 정보 영역 */
+.product-info .brand {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 4px;
+}
+
+.product-info .name {
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.4;
+  height: 2.8em; /* 두 줄 제한 */
+  overflow: hidden;
+  margin-bottom: 8px;
+}
+
+.price-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.original-price {
+  font-size: 0.85rem;
+  color: #bbb;
+  text-decoration: line-through; /* 취소선 */
+}
+
+.discount-price {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #000;
+}
