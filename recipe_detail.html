@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>요리조리 - 연어유부초밥 상세</title>
+    <style>
+      :root {
+        --main-color: #addb47;
+        --text-gray: #666;
+      }
+      body {
+        margin: 0;
+        font-family: sans-serif;
+        background-color: #fff;
+        color: #333;
+      }
+
+      /* 상단 네비게이션 및 타이틀 */
+      .top-nav {
+        height: 50px;
+        border-bottom: 2px solid #00a0e9;
+        display: flex;
+        align-items: center;
+        padding: 0 20px;
+      }
+      .recipe-header {
+        background-color: var(--main-color);
+        color: white;
+        padding: 15px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .recipe-header h2 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      /* 1. 재료 섹션 */
+      .section-header {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        font-weight: bold;
+      }
+      .ingredients-flex {
+        display: flex;
+        gap: 30px;
+        margin-bottom: 50px;
+      }
+      .main-img {
+        width: 45%;
+        border-radius: 8px;
+        object-fit: cover;
+      }
+      .ing-list {
+        flex: 1;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      .ing-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 0;
+        border-bottom: 1px solid #f9f9f9;
+        font-size: 0.9rem;
+      }
+      .ing-item .unit {
+        color: #999;
+        font-size: 0.8rem;
+        border: 1px solid #eee;
+        border-radius: 10px;
+        padding: 0 8px;
+      }
+
+      /* 2. 영상 및 타임라인 */
+      .video-area {
+        display: flex;
+        gap: 20px;
+        margin-bottom: 50px;
+        background: #fdfdfd;
+        padding: 15px;
+      }
+      .video-frame {
+        flex: 3;
+        aspect-ratio: 16 / 9;
+        background: #000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        border-radius: 5px;
+      }
+      .timeline {
+        flex: 1;
+        background: #f5f5f5;
+        padding: 15px;
+        border-radius: 5px;
+        font-size: 0.85rem;
+      }
+      .timeline h4 {
+        margin-top: 0;
+        text-align: center;
+        border-bottom: 1px solid #ddd;
+        padding-bottom: 10px;
+      }
+      .timeline-item {
+        margin-bottom: 12px;
+        cursor: pointer;
+        color: var(--text-gray);
+      }
+      .timeline-item.active {
+        color: #addb47;
+        font-weight: bold;
+      }
+
+      /* 3. 조리 순서 및 광고 */
+      .step-container {
+        display: flex;
+        gap: 30px;
+      }
+      .steps {
+        flex: 3;
+      }
+      .step-block {
+        margin-bottom: 40px;
+      }
+      .step-title {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-weight: bold;
+        margin-bottom: 15px;
+      }
+      .step-num {
+        background: var(--main-color);
+        color: white;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.8rem;
+      }
+      .step-img {
+        width: 100%;
+        border-radius: 8px;
+        margin-top: 10px;
+      }
+
+      /* 우측 광고 카드 */
+      .ad-sidebar {
+        flex: 1;
+      }
+      .ad-card {
+        border: 1px solid #eee;
+        padding: 15px;
+        border-radius: 8px;
+        text-align: center;
+        position: sticky;
+        top: 20px;
+      }
+      .ad-card h5 {
+        margin: 0 0 15px 0;
+        font-size: 1rem;
+        line-height: 1.4;
+      }
+      .ad-card img {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+      .ad-btn {
+        background: var(--main-color);
+        color: white;
+        border: none;
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="top-nav">
+      <img
+        src="assets/icons/back icon.png"
+        style="width: 24px; cursor: pointer"
+      />
+    </nav>
+
+    <div class="recipe-header">
+      <h2>연어유부초밥</h2>
+      <span>조리시간 15분 | 난이도 ★★☆☆☆</span>
+    </div>
+
+    <div class="container">
+      <div class="section-header">재료 <span>∨</span></div>
+      <div class="ingredients-flex">
+        <img src="assets/image/cook_01.png" class="main-img" alt="완성요리" />
+        <ul class="ing-list">
+          <li class="ing-item">
+            <span>시판 유부초밥</span> <span class="unit">1세트</span>
+          </li>
+          <li class="ing-item">
+            <span>연어</span> <span class="unit">150g</span>
+          </li>
+          <li class="ing-item">
+            <span>양파</span> <span class="unit">1/4개</span>
+          </li>
+          <li class="ing-item">
+            <span>마요네즈</span> <span class="unit">2스푼</span>
+          </li>
+          <li class="ing-item">
+            <span>설탕</span> <span class="unit">0.5스푼</span>
+          </li>
+          <li class="ing-item">
+            <span>밥</span> <span class="unit">2공기</span>
+          </li>
+        </ul>
+      </div>
+
+      <div class="video-area">
+        <div class="video-frame">YouTube Video Player</div>
+        <div class="timeline">
+          <h4>타임라인</h4>
+          <div class="timeline-item active">▶ 00:00 인트로</div>
+          <div class="timeline-item">00:45 연어 손질</div>
+          <div class="timeline-item">01:30 소스 만들기</div>
+          <div class="timeline-item">02:10 배합초 밥 만들기</div>
+          <div class="timeline-item">03:20 유부 속 넣기</div>
+        </div>
+      </div>
+
+      <div class="step-container">
+        <div class="steps">
+          <div class="section-header">조리순서</div>
+
+          <div class="step-block">
+            <div class="step-title">
+              <span class="step-num">1</span> 연어는 작게 썬다
+            </div>
+            <img src="https://via.placeholder.com/600x350" class="step-img" />
+          </div>
+
+          <div class="step-block">
+            <div class="step-title">
+              <span class="step-num">2</span> 양파 소스를 만든다
+            </div>
+            <img src="https://via.placeholder.com/600x350" class="step-img" />
+          </div>
+        </div>
+
+        <aside class="ad-sidebar">
+          <div class="ad-card">
+            <h5>찾던 상품<br />아니신가요?</h5>
+            <img src="https://via.placeholder.com/150" alt="상품" />
+            <p style="font-size: 0.8rem; color: #666">
+              풀무원 고소한 유부초밥 4인분
+            </p>
+            <button class="ad-btn">더 알아보기 ></button>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </body>
+</html>
