@@ -611,3 +611,26 @@ body {
   font-weight: 800;
   color: #000;
 }
+
+/* 레시피 검색창//////////////////////////////// */
+/* 사이드바 하단 최신순/인기순 정렬 설정 */
+.sort-options {
+  margin-top: 80px; /* 위쪽 필터들과의 넉넉한 거리 */
+  display: flex; /* 유연한 배치를 위해 설정 */
+  flex-direction: column; /* 위아래로 나열 */
+  align-items: flex-start; /* 핵심: 왼쪽 정렬 */
+  gap: 30px; /* 최신순과 인기순 사이의 넓은 간격 */
+  cursor: pointer; /* 마우스 올리면 손가락 모양 */
+  padding-left: 5px; /* 미세하게 왼쪽 벽에서 띄워줌 */
+}
+
+.sort-options p {
+  margin: 0; /* 기본 마진 제거해서 간격 꼬임 방지 */
+  font-size: 15px; /* 가독성 좋은 크기 */
+  transition: color 0.2s; /* 마우스 올릴 때 부드러운 변화 */
+}
+
+/* 마우스 올렸을 때 강조 효과 (선택사항) */
+.sort-options p:hover {
+  color: #addb47; /* 요리조리 포인트 컬러로 변경 */
+}

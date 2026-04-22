@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>요리조리 - 레시피 검색결과</title>
     <link rel="stylesheet" href="styles/styles.css" />
+    <script src=js/script.js></script>
   </head>
+
   <body>
     <header class="main-header">
       <div class="logo">
-        <img src="assets/image/main_logo_cook.png" alt="요리조리 로고" />
+        <a href="index.html">
+          <img src="assets/image/main_logo_cook.png" alt="요리조리 로고" />
+        </a>
       </div>
+
       <div class="search-wrap">
         <img
           src="assets/icons/zoom_icon.png"
@@ -44,13 +49,6 @@
         </div>
       </div>
     </header>
-
-    <nav class="nav-menu">
-      <a href="#">채소/과일</a>
-      <a href="#">고기/수산</a>
-      <a href="#">양념/소스</a>
-      <a href="#">유제품/계란</a>
-    </nav>
 
     <section class="search-result-section">
       <div
@@ -112,65 +110,212 @@
             class="recipe-grid"
             style="
               display: grid;
-              grid-template-columns: repeat(2, 1fr);
+              grid-template-columns: repeat(3, 3fr);
               gap: 20px;
             "
           >
-            <div
-              class="recipe-card-horizontal"
-              style="
-                display: flex;
-                border: 1px solid #eee;
-                border-radius: 15px;
-                padding: 15px;
-                background: #fff;
-              "
-            >
-              <div class="card-img-box">
-                <img
-                  src="assets/image/smoothie.png"
-                  alt="스무디"
-                  style="width: 120px; border-radius: 10px"
-                />
-              </div>
-              <div class="card-info-box" style="margin-left: 15px">
-                <h4 style="margin: 0">오렌지 딸기 요거트 스무디</h4>
-                <p style="font-size: 13px; color: #666">
-                  조리시간 5분 / 난이도 ★☆☆☆☆
-                </p>
-                <span style="font-size: 11px; color: #aaa"
-                  >♥ 1550명의 사람이 추천했어요</span
-                >
-              </div>
-            </div>
+            <a href="recipe_detail.html" style="text-decoration: none; color: inherit; display: block;">
+  <div
+    class="recipe-card-horizontal"
+    style="
+      display: flex;
+      border: 1px solid #eee;
+      border-radius: 15px;
+      padding: 15px;
+      background: #fff;
+      cursor: pointer; /* 마우스 올리면 손가락 모양으로 변경 */
+    "
+  >
+    <div class="card-img-box">
+      <img
+        src="assets/image/recipe_image_item02.png"
+        alt="스무디"
+        style="width: 120px; border-radius: 10px"
+      />
+    </div>
+    <div class="card-info-box" style="margin-left: 15px">
+      <h4 style="margin: 0">애호박 다진 고기 덮밥</h4>
+      <p style="font-size: 13px; color: #666">
+        조리시간 25분 <br />
+        난이도 ★★★☆☆
+      </p>
+      <span style="font-size: 11px; color: #aaa">
+        ♥ <span class="heart-count">1550</span>명의 사람이 추천했어요
+      </span>
+    </div>
+  </div>
+</a>
 
-            <div
-              class="recipe-card-horizontal"
-              style="
-                display: flex;
-                border: 1px solid #eee;
-                border-radius: 15px;
-                padding: 15px;
-                background: #fff;
-              "
-            >
-              <div class="card-img-box">
-                <img
-                  src="assets/image/salad.png"
-                  alt="샐러드"
-                  style="width: 120px; border-radius: 10px"
-                />
-              </div>
-              <div class="card-info-box" style="margin-left: 15px">
-                <h4 style="margin: 0">요거트 드레싱 닭가슴살 샐러드</h4>
-                <p style="font-size: 13px; color: #666">
-                  조리시간 15분 / 난이도 ★☆☆☆☆
-                </p>
-                <span style="font-size: 11px; color: #aaa"
-                  >♥ 1525명의 사람이 추천했어요</span
-                >
-              </div>
-            </div>
+<a href="recipe_detail.html" style="text-decoration: none; color: inherit; display: block;">
+
+  <div
+    class="recipe-card-horizontal"
+    style="
+      display: flex;
+      border: 1px solid #eee;
+      border-radius: 15px;
+      padding: 15px;
+      background: #fff;
+      cursor: pointer; /* 마우스 올리면 클릭 가능함을 표시 */
+    "
+  >
+    <div class="card-img-box">
+      <img
+        src="assets/image/recipe_image_item01.png"
+        alt="샐러드"
+        style="width: 120px; border-radius: 10px"
+      />
+    </div>
+    <div class="card-info-box" style="margin-left: 15px">
+      <h4 style="margin: 0">요거트 드레싱 닭가슴살 샐러드</h4>
+      <p style="font-size: 13px; color: #666">
+        조리시간 15분 <br />
+        난이도 ★★☆☆☆
+      </p>
+      <span style="font-size: 11px; color: #aaa">
+        ♥ <span class="heart-count">221</span>명의 사람이 추천했어요
+      </span>
+    </div>
+  </div>
+
+</a>
+
+<a href="recipe_detail.html" style="text-decoration: none; color: inherit; display: block;">
+  <div
+    class="recipe-card-horizontal"
+    style="
+      display: flex;
+      border: 1px solid #eee;
+      border-radius: 15px;
+      padding: 15px;
+      background: #fff;
+      cursor: pointer;
+    "
+  >
+    <div class="card-img-box">
+      <img
+        src="assets/image/recipe_image_item04.png"
+        alt="요거트볼"
+        style="width: 120px; border-radius: 10px"
+      />
+    </div>
+
+    <div class="card-info-box" style="margin-left: 15px">
+      <h4 style="margin: 0">요거트 과일 볼</h4>
+      <p style="font-size: 13px; color: #666">
+        조리시간 5분 <br />
+        난이도 ★☆☆☆☆
+      </p>
+      <span style="font-size: 11px; color: #aaa">
+        ♥<span class="heart-count">185</span>명의 사람이 추천했어요
+      </span>
+    </div>
+  </div>
+</a>
+            <!-- 카드 복사 앞부분 -->
+           <a href="recipe_detail.html" style="text-decoration: none; color: inherit; display: block;">
+  <div
+    class="recipe-card-horizontal"
+    style="
+      display: flex;
+      border: 1px solid #eee;
+      border-radius: 15px;
+      padding: 15px;
+      background: #fff;
+      cursor: pointer;
+    "
+  >
+    <div class="card-img-box">
+      <img
+        src="assets/image/recipe_image_strawberry.png"
+        alt="딸기 스무디"
+        style="width: 120px; border-radius: 10px"
+      />
+    </div>
+
+    <div class="card-info-box" style="margin-left: 15px">
+      <h4 style="margin: 0">오렌지 딸기 요거트 스무디</h4>
+      <p style="font-size: 13px; color: #666">
+        조리시간 5분 <br />
+        난이도 ★☆☆☆☆
+      </p>
+      <span style="font-size: 11px; color: #aaa">
+        ♥<span class="heart-count">1</span>명의 사람이 추천했어요
+      </span>
+    </div>
+  </div>
+</a>
+            <!-- 카드 복사 여기 안까지 -->
+
+            <!-- 카드 복사 앞부분 -->
+         <a href="recipe_detail.html" style="text-decoration: none; color: inherit; display: block;">
+  <div
+    class="recipe-card-horizontal"
+    style="
+      display: flex;
+      border: 1px solid #eee;
+      border-radius: 15px;
+      padding: 15px;
+      background: #fff;
+      cursor: pointer;
+    "
+  >
+    <div class="card-img-box">
+      <img
+        src="assets/image/recipe_image_item05.png"
+        alt="토마토달걀볶음"
+        style="width: 120px; border-radius: 10px"
+      />
+    </div>
+
+    <div class="card-info-box" style="margin-left: 15px">
+      <h4 style="margin: 0">브로콜리 토마토 달걀 볶음</h4>
+      <p style="font-size: 13px; color: #666">
+        조리시간 15분 <br />
+        난이도 ★★☆☆☆
+      </p>
+      <span style="font-size: 11px; color: #aaa">
+        ♥ <span class="heart-count">120</span>명의 사람이 추천했어요
+      </span>
+    </div>
+  </div>
+</a>
+            <!-- 카드 복사 여기 안까지 -->
+
+            <!-- 카드 복사 앞부분 -->
+          <a href="recipe_detail.html" style="text-decoration: none; color: inherit; display: block;">
+  <div
+    class="recipe-card-horizontal"
+    style="
+      display: flex;
+      border: 1px solid #eee;
+      border-radius: 15px;
+      padding: 15px;
+      background: #fff;
+      cursor: pointer;
+    "
+  >
+    <div class="card-img-box">
+      <img
+        src="assets/image/recipe_image_item03.png"
+        alt="닭가슴살 동그랑땡"
+        style="width: 120px; border-radius: 10px"
+      />
+    </div>
+
+    <div class="card-info-box" style="margin-left: 15px">
+      <h4 style="margin: 0">닭가슴살 동그랑땡</h4>
+      <p style="font-size: 13px; color: #666">
+        조리시간 35분 <br />
+        난이도 ★★★☆☆
+      </p>
+      <span style="font-size: 11px; color: #aaa">
+        ♥<span class="heart-count">13</span>명의 사람이 추천했어요
+      </span>
+    </div>
+  </div>
+</a>
+            <!-- 카드 복사 여기 안까지 -->
           </div>
         </main>
       </div>
