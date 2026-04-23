@@ -47,3 +47,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+// 타임라인 쪽 클릭시 회색박스가 비활성화 활성하하는 구간//
+const timelineItems = document.querySelectorAll(".timeline-list li");
+
+timelineItems.forEach((item) => {
+  item.addEventListener("click", function () {
+    // 1. 일단 모든 항목에서 'selected' 클래스를 제거 (초기화)
+    timelineItems.forEach((li) => li.classList.remove("selected"));
+
+    // 2. 내가 방금 클릭한 이 항목(this)에만 'selected' 클래스를 추가
+    this.classList.add("selected");
+
+    // 3. 기존에 만드신 영상 이동 함수(seekTo)도 여기서 같이 실행하면 깔끔합니다!
+  });
+});
