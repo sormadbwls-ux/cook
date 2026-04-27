@@ -62,3 +62,53 @@ timelineItems.forEach((item) => {
     // 3. 기존에 만드신 영상 이동 함수(seekTo)도 여기서 같이 실행하면 깔끔합니다!
   });
 });
+
+///////////////////////////////cart.html 관련 js//////////////////////////////////////
+const minusBtn = document.getElementById("minus-btn");
+const plusBtn = document.getElementById("plus-btn");
+const quantityInput = document.getElementById("quantity-input");
+const totalPrice = document.getElementById("total-price");
+
+const unitPrice = 8000; // 상품 1개 가격
+
+function updatePrice() {
+  let quantity = parseInt(quantityInput.value);
+
+  let total = quantity * unitPrice;
+
+  totalPrice.textContent = total.toLocaleString() + "원";
+}
+
+plusBtn.addEventListener("click", function () {
+  let quantity = parseInt(quantityInput.value);
+
+  quantity++;
+
+  quantityInput.value = quantity;
+
+  updatePrice();
+});
+
+minusBtn.addEventListener("click", function () {
+  let quantity = parseInt(quantityInput.value);
+
+  if (quantity > 1) {
+    quantity--;
+
+    quantityInput.value = quantity;
+
+    updatePrice();
+  }
+});
+
+quantityInput.addEventListener("input", function () {
+  let quantity = parseInt(quantityInput.value);
+
+  if (isNaN(quantity) || quantity < 1) {
+    quantity = 1;
+  }
+
+  quantityInput.value = quantity;
+
+  updatePrice();
+});

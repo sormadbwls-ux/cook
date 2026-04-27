@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>구매하기</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="logo">
+        <img src="assets/image/main_logo_cook.png" alt="요리조리 로고" />
+      </div>
+      <div class="search-wrap">
+        <img
+          src="assets/icons/zoom_icon.png"
+          alt="돋보기"
+          class="search-icon"
+        />
+        <input
+          type="text"
+          class="search-input"
+          placeholder="오늘의 레시피를 검색해보세요"
+        />
+      </div>
+      <div class="header-icons">
+        <div class="icon-btn">
+          <img
+            src="assets/icons/mypage_icon.png"
+            alt="마이페이지"
+            class="icon-img"
+          />
+        </div>
+        <div
+          class="icon-btn"
+          onclick="location.href = 'shopping.html'"
+          style="cursor: pointer"
+        >
+          <img
+            src="assets/icons/shopping_icon.png"
+            alt="장바구니"
+            class="icon-img"
+          />
+        </div>
+      </div>
+    </header>
+    <!-- 여기까지가 상단 헤더 부분 -->
+    <main class="container">
+      <!-- [진행 단계 표시 영역] -->
+      <div class="breadcrumb">
+        <h2>장바구니(1)</h2>
+        <p>
+          01.옵션선택 > <span class="active">02.장바구니</span> > 03.주문/결제 >
+          04.주문완료
+        </p>
+      </div>
+
+      <div class="cart-content">
+        <!-- [왼쪽: 장바구니 상품 리스트] -->
+        <section class="cart-left">
+          <div class="cart-item-card">
+            <div class="item-header">
+              <input type="checkbox" checked />
+              <span class="product-name"
+                >풀무원 고소한 유부초밥 4인분, 330g, 1개</span
+              >
+              <button class="delete-btn">삭제</button>
+            </div>
+
+            <div class="item-body">
+              <img
+                src="https://via.placeholder.com/100"
+                alt="상품이미지"
+                class="prod-img"
+              />
+              <div class="item-info">
+                <p class="option">옵션: 000</p>
+                <p class="delivery-date">4 / 13일 도착예정</p>
+                <p class="price">8,000원</p>
+                <div class="quantity-control">
+                  <button>-</button>
+                  <input type="text" value="1" />
+                  <button>+</button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 하단 선택/삭제 버튼들 -->
+          <div class="cart-actions">
+            <label><input type="checkbox" checked /> 전체 선택(1/1)</label>
+            <button class="sub-btn">선택삭제</button>
+            <button class="sub-btn">품절/판매종료상품 전체삭제</button>
+          </div>
+        </section>
+
+        <!-- [오른쪽: 결제 예상 금액 창] -->
+        <aside class="cart-right">
+          <div class="summary-card">
+            <h3>주문 예상 금액</h3>
+            <div class="summary-row">
+              <span>총 상품 가격</span>
+              <span>8,000원</span>
+            </div>
+            <div class="summary-row">
+              <span>총 배송비</span>
+              <span>+0원</span>
+            </div>
+            <hr />
+            <div class="total-row">
+              <span class="total-price">8,000원</span>
+            </div>
+            <button class="buy-btn">총 1개 상품 구매하기</button>
+          </div>
+        </aside>
+      </div>
+
+      <!-- [하단: 추천 상품 영역] -->
+      <section class="recommendations">
+        <h3>같이 보면 좋은 상품</h3>
+        <div class="rec-grid">
+          <!-- 같은 아이템이 반복되므로 하나만 작성 후 복사해서 사용 -->
+          <div class="rec-item">
+            <img src="https://via.placeholder.com/150" alt="추천상품" />
+            <p>오꾸밥 오븐에 구운 주먹밥 12봉</p>
+          </div>
+          <!-- ... 추가 아이템들 ... -->
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
