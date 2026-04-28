@@ -1,14 +1,18 @@
 <!doctype html>
 <html lang="ko">
   <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="UTF-8" />
     <title>요리조리 - 냉장고 찾기</title>
     <style>
+      /* [1. 기본 스타일 - PC 기준] */
       body {
         margin: 0;
         padding: 0;
         font-family: "LotteMartDream", "Apple SD Gothic Neo", sans-serif;
         background-color: #ffffff;
+        /* 가로 스크롤이 생기지 않도록 방지 */
+        overflow-x: hidden;
       }
 
       /* 상단 뒤로가기 및 제목 */
@@ -37,9 +41,10 @@
         font-weight: bold;
         color: #333;
         margin: 0;
+        line-height: 1.4;
       }
 
-      /* 중앙 검정 바 영역 */
+      /* 중앙 검정 바 영역 (PC 버전) */
       .full-black-bar {
         width: 100%;
         background-color: #444444;
@@ -65,37 +70,39 @@
         color: #cccccc;
       }
 
-      /* 하단 버튼 영역: 가로 길이를 시원하게 고정 */
+      /* 하단 버튼 영역 (PC 버전) */
       .button-container {
         display: flex;
         justify-content: center;
-        gap: 30px; /* 버튼 사이 간격 */
+        gap: 30px;
         padding: 60px 20px;
       }
 
       .action-btn {
-        flex: none; /* 크기 자동 조절 방지 */
-        width: 280px; /* 가로 길이 고정 */
-        height: 70px; /* 세로 높이 고정 */
+        flex: none;
+        width: 280px;
+        height: 70px;
         border: none;
-        border-radius: 50px; /* 완전한 타원형 */
-        font-size: 20px; /* 글씨 크기 키움 */
+        border-radius: 50px;
+        font-size: 20px;
         font-weight: bold;
         cursor: pointer;
         display: flex;
         align-items: center;
         justify-content: center;
-        white-space: nowrap; /* 글자 줄바꿈 방지 */
+        white-space: nowrap;
         text-decoration: none;
         color: #333;
+        transition: transform 0.2s;
       }
 
-      /* 스마트 렌즈 (연두색) */
+      .action-btn:hover {
+        transform: scale(1.02);
+      }
+
       .action-btn.green {
         background-color: #addb47;
       }
-
-      /* 수동 설정 (회색) */
       .action-btn.gray {
         background-color: #e6e6e6;
       }
@@ -112,22 +119,76 @@
         line-height: 1.6;
         margin: 0;
       }
+
+      /* ============================================================
+         [2. 모바일 전용 스타일 - 화면이 767px 이하일 때만 작동]
+         ============================================================ */
+      @media screen and (max-width: 767px) {
+        /* 제목 크기 조절 */
+        .header-content {
+          padding: 30px 20px 10px 20px;
+        }
+        .upload-title {
+          font-size: 18px;
+        }
+
+        /* 검정 바: 높이를 모바일에 맞게 줄임 */
+        .full-black-bar {
+          padding: 60px 20px;
+          margin-top: 25px;
+        }
+        .upload-icon {
+          width: 60px; /* 아이콘 크기 축소 */
+          margin-bottom: 15px;
+        }
+        .main-text {
+          font-size: 17px;
+        }
+        .sub-text {
+          font-size: 13px;
+        }
+
+        /* ★ 핵심: 버튼 위아래 배치 ★ */
+        .button-container {
+          flex-direction: column; /* 가로에서 세로로 변경 */
+          align-items: center; /* 가운데로 모으기 */
+          gap: 15px; /* 버튼 사이 위아래 간격 */
+          padding: 40px 20px; /* 여백 조절 */
+        }
+
+        .action-btn {
+          width: 100%; /* 가로 길이를 화면에 꽉 채움 */
+          max-width: 340px; /* 너무 길어지지 않게 최대치 고정 */
+          height: 56px; /* 모바일에서 누르기 적당한 높이 */
+          font-size: 17px; /* 글자 크기 조절 */
+        }
+
+        /* 하단 텍스트 */
+        .info-text {
+          font-size: 13px;
+        }
+      }
     </style>
   </head>
   <body>
+    <!-- 상단 영역 -->
     <div class="header-content">
       <a href="index.html" class="back-btn">
+        <!-- 이미지 경로가 맞는지 확인해주세요! -->
         <img src="assets/icons/back icon.png" alt="뒤로가기" />
       </a>
       <h1 class="upload-title">지금 내 냉장고에 맞는 레시피를 찾아볼까요?</h1>
     </div>
 
+    <!-- 중앙 검정 바 영역 -->
     <div class="full-black-bar">
+      <!-- 이미지 경로가 맞는지 확인해주세요! -->
       <img src="assets/icons/view_icon.png" class="upload-icon" alt="아이콘" />
       <p class="main-text">이미지를 끌어당겨 넣어주세요</p>
       <p class="sub-text">냉장고 안이 잘 보이도록 촬영해주세요!</p>
     </div>
 
+    <!-- 버튼 영역 (모바일에서 위아래로 쌓임) -->
     <div class="button-container">
       <button class="action-btn green" onclick="alert('스마트 렌즈 준비 중!')">
         스마트 렌즈
@@ -141,6 +202,7 @@
       </button>
     </div>
 
+    <!-- 하단 안내 문구 -->
     <div class="info-section">
       <p class="info-text">
         * 사진을 찍으면 AI가 식재료를 자동으로 인식합니다.<br />

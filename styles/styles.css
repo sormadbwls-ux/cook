@@ -32,10 +32,11 @@ body {
 
 /* 1. 헤더 설정 */
 .main-header {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 20px 80px;
+  padding: 20px 80px !important; /* 인덱스 페이지에서 쓰던 80px 여백 적용 */
   background-color: white;
 }
 
@@ -565,9 +566,35 @@ body {
 }
 
 /* 개별 카드 디자인 */
+/* --- [여기서부터 복사] 모든 상품 카드 예쁘게 만들기 --- */
 .product-card {
-  display: flex;
-  flex-direction: column;
+  text-decoration: none !important; /* 밑줄 지우기 */
+  color: inherit !important; /* 파란색 지우기 */
+  display: block !important; /* 상자 모양 만들기 */
+}
+
+/* 카드 안에 있는 모든 글자들 밑줄 지우기 */
+.product-card p {
+  text-decoration: none !important;
+}
+
+/* 브랜드(회색), 이름(진한색), 가격(검정색) 색깔 딱 정해주기 */
+.product-card .p-brand {
+  color: #888 !important;
+}
+.product-card .p-name {
+  color: #333 !important;
+}
+.product-card .p-price {
+  color: #000 !important;
+  font-weight: bold;
+}
+/* --- [여기까지 복사] --- */
+
+/* 3. 마우스를 올렸을 때 파란색으로 변하는 것도 방지! */
+.product-card:hover {
+  text-decoration: none !important;
+  color: inherit !important;
 }
 
 .image-wrapper {
@@ -642,12 +669,11 @@ body {
 }
 
 /*//////////////////////////레시피 디테일 쪽 관련 css///////////////////////////////////*
-/* 1. 레시피 전체 컨테이너 정렬 */
+/* 1. 컨테이너 너비를 메인페이지(1200px) 수준으로 넓힙니다 */
 .container {
-  max-width: 1000px; /* 전체 화면이 너무 넓어지지 않게 제한 */
-  margin: 0 auto; /* 화면 가운데로 정렬 */
-  padding: 20px 40px; /* 상하 20px, 좌우 40px 여백 추가 (여기를 조절하세요!) */
-  background-color: #fff;
+  max-width: 1200px !important; /* 1000px에서 1200px로 변경 */
+  margin: 0 auto;
+  padding: 0 20px; /* 좌우 여백을 살짝 줄여 더 넓게 보이게 함 */
 }
 
 /* 2. 재료 이미지와 영상 박스의 시작점 맞추기 */
@@ -1032,9 +1058,9 @@ body {
   color: #333;
 }
 .container {
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0 20px;
 }
 
 /* 상품 상단 레이아웃 (Flexbox 사용) */
@@ -1042,6 +1068,7 @@ body {
   display: flex;
   gap: 40px;
   margin-bottom: 50px;
+  margin-top: 50px;
 }
 .product-image {
   flex: 1;
@@ -1146,4 +1173,224 @@ body {
   display: block;
   width: 100%;
   height: auto;
+}
+
+/* 쇼핑몰 밑줄 퇴치  */
+/* --- [필살기] 모든 상태에서 밑줄을 완전히 지워버려요 --- */
+
+/* 1. 처음 볼 때, 이미 눌렀을 때, 마우스 올렸을 때 모두 밑줄 금지! */
+.product-card,
+.product-card:link,
+.product-card:visited,
+.product-card:hover,
+.product-card:active {
+  text-decoration: none !important; /* 밑줄 절대 절대 금지! */
+  color: inherit !important; /* 색깔 변하기 금지! */
+  border-bottom: none !important; /* 혹시 선이 그려져 있다면 그것도 삭제! */
+  outline: none !important; /* 테두리도 삭제! */
+}
+
+/* 2. 카드 안에 있는 글자들도 혹시 모르니 한 번 더 금지! */
+.product-card p,
+.product-card span,
+.product-card div {
+  text-decoration: none !important;
+}
+/* ///////////////////////////////// */
+/* 모바일 버전  */
+/* //////////////////////////////////// */
+/*styles.css 맨 밑에 있는 @media 구문을 싹 지우고 이것만 넣으세요*/
+/* ============================================================
+   [요리조리 앱] 모바일 통합 반응형 코드 (767px 이하)
+   ============================================================ */
+
+@media screen and (max-width: 767px) {
+  /* 1. 기본 레이아웃 보정 (여백 및 너비) */
+  .recipe-section {
+    padding: 30px 15px !important;
+    width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .recipe-flex-container {
+    display: block !important;
+    width: 100% !important;
+    gap: 0 !important;
+  }
+
+  .recipe-column {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 40px 0 !important;
+    padding: 0 !important;
+  }
+
+  /* 2. 헤더 및 검색창 (로고/아이콘 상단, 검색창 하단 배치) */
+  .main-header {
+    padding: 10px 15px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    height: auto !important;
+  }
+
+  .logo {
+    order: 1;
+    width: auto !important;
+  }
+  .logo img {
+    height: 35px !important;
+  }
+
+  .header-icons {
+    order: 2;
+    width: auto !important;
+    gap: 10px !important;
+  }
+  .icon-btn {
+    width: 38px !important;
+    height: 38px !important;
+  }
+
+  .search-wrap {
+    order: 3;
+    width: 100% !important;
+    margin: 15px 0 0 0 !important;
+    padding: 8px 15px !important;
+    background: #f0f0f0 !important;
+  }
+
+  /* 3. 모바일에서 숨길 요소들 */
+  .nav-menu,
+  .main-banner,
+  .ad-list-box,
+  .fridge-guide-text {
+    display: none !important;
+  }
+
+  /* 4. 오늘의 인기 레시피 (가로 정렬: 이미지 좌 / 텍스트 우) */
+  .food-card-layout {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 15px !important;
+    align-items: flex-start !important;
+  }
+
+  .food-img-stack {
+    width: 120px !important;
+    height: 90px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .food-info h3 {
+    font-size: 16px !important;
+  }
+  .tag-list {
+    font-size: 11px !important;
+  }
+
+  /* 5. 테라피 레시피 (3열 그리드) */
+  .therapy-grid-box {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 10px !important;
+  }
+
+  /* 6. 냉장고 메인 버튼 */
+  .fridge-banner-section {
+    background: none !important;
+    background-color: #ffffff !important;
+    padding: 60px 15px !important;
+    height: auto !important;
+  }
+
+  .fridge-button {
+    min-width: 280px !important;
+    font-size: 15px !important;
+  }
+
+  /* ------------------------------------------------------------
+     [중요] 업로드 페이지 (냉장고 찾기) 보정 섹션
+  ------------------------------------------------------------ */
+
+  /* 전체 컨테이너 여백 */
+  .upload-page-container {
+    padding: 20px !important; /* 여기 패딩 20px 기준 */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    overflow-x: hidden !important; /* 가로 스크롤 방지 */
+  }
+
+  /* 검정색 업로드 박스 (화면 끝까지 꽉 채우기 + 중앙 정렬) */
+  .upload-box {
+    width: 100vw !important; /* 화면 가로 전체 너비 */
+    margin-left: -20px !important; /* 컨테이너 패딩만큼 왼쪽으로 당김 */
+    margin-top: 20px !important;
+    background-color: #444 !important;
+    padding: 60px 20px !important; /* 좌우 여백 20px 주어 글자 안 붙게 함 */
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important; /* 아이콘, 글자 가로 중앙 */
+    justify-content: center !important; /* 세로 중앙 */
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  .upload-icon {
+    width: 55px !important;
+    margin-bottom: 15px !important;
+    display: block !important;
+  }
+
+  .main-text {
+    font-size: 17px !important;
+    color: #fff !important;
+    margin-bottom: 8px !important;
+    width: 100% !important;
+  }
+
+  .sub-text {
+    font-size: 13px !important;
+    color: #aaa !important;
+    width: 100% !important;
+  }
+
+  /* 1. 버튼을 감싸는 박스: 무조건 세로로 정렬 */
+  .button-container {
+    display: flex !important;
+    flex-direction: column !important; /* 가로 -> 세로 강제 전환 */
+    align-items: center !important; /* 중앙 정렬 */
+    gap: 15px !important; /* 버튼 사이 위아래 간격 */
+    width: 100% !important;
+    padding: 20px 0 !important; /* 위아래 여백 */
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* 2. 개별 버튼 (스마트 렌즈, 수동 설정): PC의 700px 설정을 완전히 무시 */
+  .action-btn {
+    display: flex !important;
+    width: 100% !important; /* 화면 가로 꽉 채우기 */
+    max-width: 100% !important; /* PC 버전의 700px 고정 해제 */
+    min-width: 0 !important; /* 최소 너비 제한 해제 */
+    height: 56px !important; /* 버튼 높이 */
+    border-radius: 28px !important; /* 둥글게 */
+    font-size: 17px !important;
+    font-weight: bold !important;
+    justify-content: center !important;
+    align-items: center !important;
+    margin: 0 !important; /* 혹시 모를 옆 마진 제거 */
+    cursor: pointer;
+    text-align: center !important;
+  }
+
+  /* 하단 안내 문구 중앙 정렬 */
+  .upload-page-container > p,
+  .upload-page-container span {
+    width: 100% !important;
+    text-align: center !important;
+    font-size: 13px !important;
+    line-height: 1.6 !important;
+  }
 }
