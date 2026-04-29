@@ -1,114 +1,183 @@
 document.addEventListener("DOMContentLoaded", function () {
-  const sortOptions = document.querySelectorAll(".sort-options p");
-  const recipeGrid = document.querySelector(".recipe-grid");
+  /* ==========================================
+     1. [공통/메인/쇼핑몰] 버튼 클릭 및 페이지 이동
+     ========================================== */
 
-  // 수정 포인트 1: 선택자를 .recipe-card-horizontal의 부모인 a 태그로 변경
-  // 만약 모든 카드에 <a>를 감쌌다면 아래처럼 가져오면 됩니다.
-  const originalCards = Array.from(
-    document.querySelectorAll(".recipe-grid > a"),
-  );
-
-  sortOptions.forEach((option) => {
-    option.addEventListener("click", function () {
-      const selectedText = this.innerText.trim();
-
-      sortOptions.forEach((opt) => {
-        opt.style.fontWeight = "normal";
-        opt.style.color = "#888";
-      });
-      this.style.fontWeight = "bold";
-      this.style.color = "#000";
-
-      if (selectedText === "인기순") {
-        // 수정 포인트 2: 정렬할 때도 a 태그 리스트를 가져옵니다.
-        const cardsToSort = Array.from(
-          document.querySelectorAll(".recipe-grid > a"),
-        );
-
-        cardsToSort.sort((a, b) => {
-          // a 태그 안에서 .heart-count를 찾습니다.
-          const heartA = parseInt(
-            a.querySelector(".heart-count")?.innerText || 0,
-          );
-          const heartB = parseInt(
-            b.querySelector(".heart-count")?.innerText || 0,
-          );
-          return heartB - heartA;
-        });
-
-        recipeGrid.innerHTML = "";
-        cardsToSort.forEach((card) => recipeGrid.appendChild(card));
-        console.log("인기순 정렬 완료");
-      } else if (selectedText === "최신순") {
-        recipeGrid.innerHTML = "";
-        originalCards.forEach((card) => recipeGrid.appendChild(card));
-        console.log("최신순(원본) 복구 완료");
-      }
+  // 테라피 레시피 버튼 (메인)
+  const therapyButtons = document.querySelectorAll(".t-unit");
+  therapyButtons.forEach((btn) => {
+    btn.style.cursor = "pointer";
+    btn.addEventListener("click", () => {
+      location.href = "recipe_search.html";
     });
   });
-});
 
-// 타임라인 쪽 클릭시 회색박스가 비활성화 활성하하는 구간//
-const timelineItems = document.querySelectorAll(".timeline-list li");
-
-timelineItems.forEach((item) => {
-  item.addEventListener("click", function () {
-    // 1. 일단 모든 항목에서 'selected' 클래스를 제거 (초기화)
-    timelineItems.forEach((li) => li.classList.remove("selected"));
-
-    // 2. 내가 방금 클릭한 이 항목(this)에만 'selected' 클래스를 추가
-    this.classList.add("selected");
-
-    // 3. 기존에 만드신 영상 이동 함수(seekTo)도 여기서 같이 실행하면 깔끔합니다!
+  // 구매 버튼 (상세페이지)
+  const buyBtns = document.querySelectorAll(".buy-btn");
+  buyBtns.forEach((button) => {
+    button.addEventListener("click", () => {
+      location.href = "shop_detail.html";
+    });
   });
-});
 
-///////////////////////////////cart.html 관련 js//////////////////////////////////////
-const minusBtn = document.getElementById("minus-btn");
-const plusBtn = document.getElementById("plus-btn");
-const quantityInput = document.getElementById("quantity-input");
-const totalPrice = document.getElementById("total-price");
+  // 상품 카드 클릭 (쇼핑몰)
+  const productCards = document.querySelectorAll(".product-card");
+  productCards.forEach((card) => {
+    card.style.cursor = "pointer";
+    card.addEventListener("click", () => {
+      location.href = "shop_detail.html";
+    });
+  });
 
-const unitPrice = 8000; // 상품 1개 가격
+  /* ==========================================
+     2. [레시피 검색] 인기순/최신순 정렬 기능
+     ========================================== */
+  const sortOptions = document.querySelectorAll(".sort-options p");
+  const recipeGrid = document.querySelector(".recipe-grid");
+  if (sortOptions.length > 0 && recipeGrid) {
+    const originalCards = Array.from(
+      document.querySelectorAll(".recipe-grid > a"),
+    );
 
-function updatePrice() {
-  let quantity = parseInt(quantityInput.value);
+    sortOptions.forEach((option) => {
+      option.addEventListener("click", function () {
+        const selectedText = this.innerText.trim();
+        sortOptions.forEach((opt) => {
+          opt.style.fontWeight = "normal";
+          opt.style.color = "#888";
+        });
+        this.style.fontWeight = "bold";
+        this.style.color = "#000";
 
-  let total = quantity * unitPrice;
-
-  totalPrice.textContent = total.toLocaleString() + "원";
-}
-
-plusBtn.addEventListener("click", function () {
-  let quantity = parseInt(quantityInput.value);
-
-  quantity++;
-
-  quantityInput.value = quantity;
-
-  updatePrice();
-});
-
-minusBtn.addEventListener("click", function () {
-  let quantity = parseInt(quantityInput.value);
-
-  if (quantity > 1) {
-    quantity--;
-
-    quantityInput.value = quantity;
-
-    updatePrice();
+        if (selectedText === "인기순") {
+          const cardsToSort = Array.from(
+            document.querySelectorAll(".recipe-grid > a"),
+          );
+          cardsToSort.sort((a, b) => {
+            const heartA = parseInt(
+              a.querySelector(".heart-count")?.innerText || 0,
+            );
+            const heartB = parseInt(
+              b.querySelector(".heart-count")?.innerText || 0,
+            );
+            return heartB - heartA;
+          });
+          recipeGrid.innerHTML = "";
+          cardsToSort.forEach((card) => recipeGrid.appendChild(card));
+        } else if (selectedText === "최신순") {
+          recipeGrid.innerHTML = "";
+          originalCards.forEach((card) => recipeGrid.appendChild(card));
+        }
+      });
+    });
   }
-});
 
-quantityInput.addEventListener("input", function () {
-  let quantity = parseInt(quantityInput.value);
+  /* ==========================================
+     3. [레시피 상세] 타임라인 클릭 효과
+     ========================================== */
+  const timelineItems = document.querySelectorAll(".timeline-list li");
+  timelineItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      timelineItems.forEach((li) => li.classList.remove("selected"));
+      this.classList.add("selected");
+    });
+  });
 
-  if (isNaN(quantity) || quantity < 1) {
-    quantity = 1;
+  /* ==========================================
+     4. [장바구니] 수량 조절 및 가격 계산
+     ========================================== */
+  const plusBtn = document.getElementById("plus-btn");
+  const minusBtn = document.getElementById("minus-btn");
+  const quantityInput = document.getElementById("quantity-input");
+  const totalPrice = document.getElementById("total-price");
+
+  if (plusBtn && minusBtn && quantityInput && totalPrice) {
+    const unitPrice = 8000;
+    const updatePrice = () => {
+      let quantity = parseInt(quantityInput.value) || 1;
+      totalPrice.textContent = (quantity * unitPrice).toLocaleString() + "원";
+    };
+
+    plusBtn.addEventListener("click", () => {
+      quantityInput.value = parseInt(quantityInput.value) + 1;
+      updatePrice();
+    });
+
+    minusBtn.addEventListener("click", () => {
+      let quantity = parseInt(quantityInput.value);
+      if (quantity > 1) {
+        quantityInput.value = quantity - 1;
+        updatePrice();
+      }
+    });
+
+    quantityInput.addEventListener("input", () => {
+      if (isNaN(quantityInput.value) || quantityInput.value < 1)
+        quantityInput.value = 1;
+      updatePrice();
+    });
   }
 
-  quantityInput.value = quantity;
+  /* ==========================================
+     5. [재료 편집] 태그 추가 및 삭제 기능 (중점 수정)
+     ========================================== */
 
-  updatePrice();
-});
+  // 태그를 화면에 생성하는 함수
+  function createTag(text, container) {
+    // 중복 체크: 이미 있는 태그는 추가 안 함
+    const currentTags = Array.from(container.querySelectorAll(".tag")).map(
+      (t) => t.innerText.replace("✖", "").trim(),
+    );
+    if (currentTags.includes(text)) return;
+
+    const tag = document.createElement("div");
+    tag.className = "tag";
+    tag.innerHTML = `${text} <span class="remove-btn">✖</span>`;
+    container.appendChild(tag);
+  }
+
+  // 섹션별 초기화 함수
+  function initIngredientInput(sectionId, containerId) {
+    const section = document.getElementById(sectionId);
+    if (!section) return; // 해당 ID가 페이지에 없으면 실행 안함
+
+    const input = section.querySelector(".ingredient-input");
+    const container = document.getElementById(containerId);
+    const clearBtn = section.querySelector(".clear-input-btn");
+
+    if (input && container) {
+      // (1) 엔터 입력 시 태그 추가
+      input.addEventListener("keypress", function (e) {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          const value = this.value.trim();
+          if (value) {
+            // 띄어쓰기로 여러 개 입력 시 처리
+            const items = value.split(/\s+/);
+            items.forEach((item) => createTag(item, container));
+            this.value = "";
+          }
+        }
+      });
+
+      // (2) X 버튼 클릭 시 입력창 지우기
+      if (clearBtn) {
+        clearBtn.addEventListener("click", function () {
+          input.value = "";
+          input.focus();
+        });
+      }
+
+      // (3) 태그 삭제 기능 (이벤트 위임: 새로 만든 태그도 삭제 가능)
+      container.addEventListener("click", function (e) {
+        if (e.target.classList.contains("remove-btn")) {
+          e.target.parentElement.remove();
+        }
+      });
+    }
+  }
+
+  // 재료 입력 섹션들 실행
+  initIngredientInput("include-section", "include-tags");
+  initIngredientInput("exclude-section", "exclude-tags");
+}); // DOMContentLoaded 끝

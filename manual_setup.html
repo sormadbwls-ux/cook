@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>요리조리 - 재료 편집</title>
+    <script src="js/script.js" defer></script>
     <style>
       /* [1. 기본 스타일 - PC 기준] */
       body {
@@ -237,45 +238,5 @@
         검색
       </button>
     </div>
-
-    <script>
-      function initInput(sectionId, containerId) {
-        const section = document.getElementById(sectionId);
-        const input = section.querySelector(".ingredient-input");
-        const container = document.getElementById(containerId);
-        const clearBtn = section.querySelector(".clear-input-btn");
-
-        // 1. 엔터 치면 태그 추가
-        input.addEventListener("keypress", function (e) {
-          if (e.key === "Enter") {
-            e.preventDefault();
-            const value = this.value.trim();
-            if (value) {
-              createTag(value, container);
-              this.value = "";
-            }
-          }
-        });
-
-        // 2. 입력창 옆 ✖ 버튼 누르면 텍스트만 삭제
-        clearBtn.addEventListener("click", function () {
-          input.value = "";
-          input.focus();
-        });
-      }
-
-      function createTag(text, container) {
-        const tag = document.createElement("div");
-        tag.className = "tag";
-        tag.innerHTML = `${text} <span class="remove-btn">✖</span>`;
-        tag.querySelector(".remove-btn").onclick = function () {
-          tag.remove();
-        };
-        container.appendChild(tag);
-      }
-
-      initInput("include-section", "include-tags");
-      initInput("exclude-section", "exclude-tags");
-    </script>
   </body>
 </html>

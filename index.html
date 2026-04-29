@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>요리조리</title>
     <link rel="stylesheet" href="styles/styles.css" />
+    <script src="js/script.js" defer></script>
   </head>
   <body>
     <header class="main-header">
@@ -25,12 +26,15 @@
       </div>
       <div class="header-icons">
         <div class="icon-btn">
-          <img
-            src="assets/icons/mypage_icon.png"
-            alt="마이페이지"
-            class="icon-img"
-          />
+          <a href="sign.html" class="icon-btn">
+            <img
+              src="assets/icons/mypage_icon.png"
+              alt="마이페이지"
+              class="icon-img"
+            />
+          </a>
         </div>
+
         <div
           class="icon-btn"
           onclick="location.href = 'shopping.html'"
@@ -87,7 +91,14 @@
               <img src="assets/icons/no1_cion2.png" class="badge" />
             </div>
             <div class="food-info">
-              <h3>바나나 바질 핫케이크</h3>
+              <h3>
+                <a
+                  href="recipe_detail.html"
+                  style="text-decoration: none; color: inherit; outline: none"
+                >
+                  바나나 바질 핫케이크
+                </a>
+              </h3>
               <p class="tag-list">#스트레스 풀림 #디저트 #아이들 간식 대용</p>
             </div>
           </div>
