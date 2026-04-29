@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>로그인 - 요리조리</title>
+    <link rel="stylesheet" href="styles/styles.css" />
+    <style>
+      /* 1. 기본 초기화 및 레이아웃 */
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden; /* 스크롤 방지 */
+      }
+
+      .main-container {
+        display: flex;
+        height: 100vh;
+      }
+
+      /* 2. 왼쪽 배경 이미지 영역 */
+      .left-section {
+        flex: 1.2; /* 왼쪽을 조금 더 넓게 */
+        background:
+          linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)),
+          url("assets/image/login_bg.png");
+        background-size: cover;
+        background-position: center;
+      }
+
+      /* 3. 오른쪽 로그인 영역 */
+      .right-section {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+      }
+
+      /* 로고 스타일 */
+      .logo-area {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .logo-area img {
+        width: 150px; /* 로고 크기 조절 */
+      }
+      .logo-area p {
+        margin-top: 10px;
+        color: #666;
+        font-size: 14px;
+      }
+
+      /* 4. 버튼 영역 (기존 코드 활용) */
+      .social-login-area {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+      }
+
+      .btn-img-link img {
+        width: 320px;
+        display: block;
+        cursor: pointer;
+        transition: all 0.2s ease;
+      }
+
+      /* 호버 시: 살짝 커지고 부드러운 그림자 */
+      .btn-img-link img:hover {
+        transform: translateY(-3px) scale(1.01);
+        filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+      }
+
+      /* 클릭 시: 살짝 눌리는 느낌 */
+      .btn-img-link img:active {
+        transform: scale(0.98);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <!-- 왼쪽 섹션 -->
+      <div class="left-section"></div>
+
+      <!-- 오른쪽 섹션 -->
+      <div class="right-section">
+        <!-- 로고 추가 영역 -->
+        <div class="logo-area">
+          <img src="assets/icons/logo.png" alt="요리조리 로고" />
+        </div>
+
+        <!-- 기존 버튼 영역 -->
+        <div class="social-login-area">
+          <a href="index.html" class="btn-img-link">
+            <img
+              src="assets/image/kakao_login_medium_wide 1 1.png"
+              alt="카카오"
+            />
+          </a>
+          <a href="index.html" class="btn-img-link">
+            <img
+              src="assets/image/NAVER_login_Dark_KR_green_wide_H56 1.png"
+              alt="네이버"
+            />
+          </a>
+          <a href="index.html" class="btn-img-link">
+            <img
+              src="assets/image/google_login_Dark_KR_green_wide_H56 1.png"
+              alt="구글"
+            />
+          </a>
+          <a href="index.html" class="btn-img-link">
+            <!-- 아까 물어보신 sign.html로 연결 -->
+            <img src="assets/image/guest_login_01.png" alt="게스트" />
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
