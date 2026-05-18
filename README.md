@@ -1,25 +1,87 @@
-# cook 레시피 앱
+# 🍳 요리조리 (YoriJori) - 맞춤형 레시피 & 테라피 푸드 플랫폼
 
-- [노션에서 보기](https://protective-soil-b0d.notion.site/UX-UI-32cffe8eafbe8079aed7cf0147dadb7d?source=copy_link)
+> 사용자의 현재 건강 상태(테라피)와 냉장고 속 남은 재료를 기반으로 맞춤형 레시피를 제안하는 UI/UX 및 웹 디자인 프로젝트입니다.
 
-<div align= "center">
-    <img src="https://capsule-render.vercel.app/api?type=soft&color=0:2effa4,100:bad558&height=120&text=요리조리&animation=&fontColor=603e5f&fontSize=50" />
-    </div>
-    <div style="text-align: left;"> 
-    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 요리조리 </h2>  
-    <div style="font-weight: 700; font-size: 15px; text-align: left; color: #282d33;"> 음식 레시피 검색 및 쇼핑몰 웹사이트입니다. </div> 
-    </div>
-    <div style="text-align: left;">
-    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🛠️ Tech Stacks </h2> <br> 
-    <div style="margin: ; text-align: left;" "text-align: left;"> <img src="https://img.shields.io/badge/Figma-F24E1E?style=plastic&logo=Figma&logoColor=white">
-          <img src="https://img.shields.io/badge/HTML5-E34F26?style=plastic&logo=HTML5&logoColor=white">
-          </div>
-    </div>
-    <div style="text-align: left;">
-    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🧑‍💻 Contact me </h2> <br> 
-    <div style="text-align: left;"> <a href=https://www.notion.so/35fffe8eafbe801080f4d39057b94a4a> <img src="https://img.shields.io/badge/Notion-000000?style=plastic&logo=Notion&logoColor=white&link=https://www.notion.so/35fffe8eafbe801080f4d39057b94a4a"> </a>
-          </div>  <br> 
-    <div style="text-align: left;">  </div> 
-    </div>
-    <div style="text-align: left;"> 
+👉 [실제 배포된 요리조리 웹사이트 보러가기](https://sormadbwls-ux.github.io/cook/)
 
+---
+
+## 📌 1. 프로젝트 개요
+
+
+| 구분 | 내용 |
+|---|---|
+| **서비스명** | 요리조리 (YoriJori) |
+| **핵심 컨셉** | 개인 맞춤형 테라피 레시피 추천 및 냉장고 관리 서비스 |
+| **타겟 유저** | 특정 건강 관리(당뇨, 혈압, 소화불량 등)가 필요하거나 식자재 소비를 고민하는 사용자 |
+| **디자인 강점** | 가독성 높은 격자형 인터페이스, 직관적인 카테고리 아이콘 시스템, 오리지널 요리사 캐릭터 구축 |
+
+---
+
+## ⚙️ 2. UX 디자인 프로세스
+
+비주얼 아이덴티티 수립부터 화면 설계, 최종 인터랙션 검토까지 구조적인 디자인 프로세스를 거쳐 유저 경험을 설계했습니다.
+
+```mermaid
+flowchart LR
+    A[사용자 문제 정의] --> B[메뉴 및 카테고리 IA 기획]
+    B --> C[요리사 캐릭터 및 브랜드 소스 제작]
+    C --> D[Figma 메인 UI 레이아웃 설계]
+    D --> E[반응형 웹 화면 최종 구현 검토]
+```
+
+---
+
+## 🧠 3. 정보 구조 및 화면 구성 (IA Map)
+
+유저가 홈 화면에서 원하는 목적(인기 레시피, 테라피 찾기, 냉장고 매칭)에 따라 시선이 자연스럽게 흐르도록 설계한 정보 구조입니다.
+
+```mermaid
+mindmap
+  root((요리조리 GNB))
+    메인 서비스
+      로고 및 검색
+      마이페이지
+      장바구니
+    푸드 카테고리
+      채소 / 과일
+      고기 / 수산
+      양념 / 소스
+      유제품 / 계란
+    핵심 콘텐츠 영역
+      배너 롤링 광고
+      오늘의 인기 레시피
+      상태 맞춤형 테라피 레시피
+      내 냉장고 맞춤 레시피 큐레이션
+```
+
+---
+
+## 🛠️ 사용 도구 및 리소스
+
+화면 레이아웃 빌드와 독창적인 캐릭터/배너 리소스 제작에 활용된 핵심 도구 라인업입니다.
+
+`Figma` `Photoshop` `Illustrator` `Clip Studio Paint`
+
+---
+
+## 📂 4. 페이지별 주요 설계 포인트
+
+
+| 영역 | 세부 설계 내용 및 포인트 | 활용 툴 |
+|---|---|---|
+| **상단 GNB & 카테고리** | 아이콘 중심의 명확한 식자재 분류 UI, 장바구니 및 유저 인덱스 접근성 강화 | Figma, Illustrator |
+| **프로모션 롤링 배너** | 정보 전달력을 높인 연속 배너 컴포넌트 및 비주얼 그래픽 디자인 | Photoshop |
+| **테라피 레시피 영역** | 당뇨·혈압·소화불량 등 신체 상태별 맞춤 태그 디자인 및 검색 최적화 | Figma |
+| **냉장고 맞춤형 추천** | 요리사 오리지널 캐릭터를 활용한 친근한 UX 가이드라인 및 인터페이스 기획 | Clip Studio Paint, Figma |
+
+---
+
+## 📧 Contact
+
+
+| 구분 | 링크/정보 |
+|---|---|
+| **Email** | your-email@example.com |
+| **GitHub Repository** | [sormadbwls-ux/cook](https://github.com) |
+| **배포 사이트** | [요리조리 웹 사이트 바로가기](https://sormadbwls-ux.github.io/cook/) |
