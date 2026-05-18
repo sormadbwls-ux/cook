@@ -100,7 +100,7 @@ mindmap
 
 | 구분 | 링크/정보 |
 |---|---|
-| **Email** | your-email@example.com |
+| **Email** | sormadbwls@naver.com |
 | **GitHub Repository** | [sormadbwls-ux/cook](https://github.com) |
 | **배포 사이트** | [요리조리 웹 사이트 바로가기](https://github.io) |
 
